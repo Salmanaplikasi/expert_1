@@ -1,0 +1,384 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap')
+
+$primary-color: #FFB534
+$secondary-color: #ECB159
+$background-color: #F6F5F5
+$text-color: #FEFBF6
+$white-color: #FFFFFF
+$red-color: #FF0000
+$black-color: #000000
+$hover-color: #DC5F00
+
+$breakpoint-small: 576px
+$breakpoint-medium: 768px
+$breakpoint-large: 992px
+$breakpoint-extra-large: 1200px
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+body
+    font-family: 'Ubuntu', sans-serif
+    background-color: $background-color
+    color: $text-color
+
+.skip-to__content
+    position: absolute
+    top: -100px
+    left: 0
+    z-index: 2
+    background-color: $red-color
+    color: $text-color
+    padding: 10px
+    transition: top 0.3s
+
+    &:focus
+        top: 0
+
+header
+    background-color: $primary-color
+    height: 100px
+    font-weight: bold
+    display: flex
+    justify-content: space-around
+    align-items: center
+
+
+    .hamburger
+        cursor: pointer
+        display: none
+
+    nav
+        display: flex
+        align-items: center
+
+        .brand-container
+            display: flex
+            align-items: center
+
+            h1
+                font-size: 50px
+                font-weight: bold
+                cursor: pointer
+
+        ul
+            gap: 4rem
+            display: flex
+            justify-content: center
+            align-items: center
+
+            li
+                list-style: none
+
+                a
+                    text-decoration: none
+                    color: $text-color
+                    font-size: 20px
+                    min-width: 44px
+                    min-height: 44px
+                    display: inline-block
+                    text-align: center
+                    line-height: 44px
+                    transition: color 0.3s ease
+
+                    &:hover
+                        color: $hover-color
+
+.hero-container
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    min-height: 100vh
+    width: 100%
+    gap: 1.8rem
+    background-image: url('../../public/images/heros/hero-image_1.jpg')
+    background-size: cover
+    background-position: center
+    text-align: center
+    color: $secondary-color
+
+    h2
+        font-size: 60px
+        font-weight: bold
+
+    p
+        font-size: 24px
+
+    button
+        background-color: $secondary-color
+        color: $text-color
+        border: none
+        padding: 14px 28px
+        border-radius: 5px
+        font-weight: bold
+        cursor: pointer
+
+#explore-restaurant
+    h3
+        padding: 3rem
+        text-align: center
+        font-size: 36px
+        font-weight: bold
+        color: $secondary-color
+
+#explore-restaurant__list
+    background-color: $secondary-color
+    color: $black-color
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-wrap: wrap
+    padding: 24px
+    margin-bottom: 36px
+
+.card
+    background-color: $white-color
+    color: $black-color
+    border-radius: 10px
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1)
+    padding: 20px
+    margin: 20px
+    transition: transform 0.3s ease
+    width: calc(33.33% - 40px)
+    min-height: 300px
+    max-height: 350px
+    min-width: 300px
+    max-width: 400px
+    cursor: pointer
+
+    &:hover
+        transform: translateY(-5px)
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1)
+
+    .card-image
+        position: relative
+        border-radius: 10px
+        overflow: hidden
+        height: 200px
+
+        .card-image__item
+            width: 100%
+            height: auto
+
+        .card-image__rating
+            position: absolute
+            top: 10px
+            right: 10px
+            background-color: rgba(255, 255, 255, 0.8)
+            padding: 5px 10px
+            border-radius: 5px
+            display: flex
+            align-items: center
+
+            i
+                color: gold
+                margin-right: 5px
+
+    .card-content
+        margin-top: 20px
+
+        .card-content__title
+            font-size: 18px
+            font-weight: bold
+            margin-bottom: 10px
+
+        .card-content__description
+            font-size: 14px
+            overflow: hidden
+            text-overflow: ellipsis
+            display: -webkit-box
+            -webkit-line-clamp: 3
+            -webkit-box-orient: vertical
+
+#popupContainer
+    position: fixed
+    color: $black-color
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    background-color: white
+    padding: 20px
+    border-radius: 8px
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3)
+    z-index: 999
+
+.popup h3
+    font-size: 24px
+    margin-bottom: 10px
+
+.popup p
+    margin-bottom: 5px
+    font-size: 16px
+
+.popup ul
+    list-style-type: none
+    padding: 0
+
+.popup ul li
+    margin-bottom: 5px
+    font-size: 14px
+
+#closePopupButton
+    background-color: #007bff
+    color: white
+    border: none
+    border-radius: 5px
+    padding: 10px 20px
+    cursor: pointer
+    min-width: 44px
+    min-height: 44px
+
+#closePopupButton:hover
+    background-color: #0056b3
+
+body.popup-open
+    overflow: hidden
+
+#content.blur-background
+    filter: blur(5px)
+
+#overlay
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background-color: rgba(0, 0, 0, 0.5)
+    z-index: 998
+
+footer
+    background-color: $primary-color
+    padding: 24px
+    text-align: center
+    cursor: pointer
+
+@media screen and (max-width: $breakpoint-extra-large)
+    header
+        height: 80px
+
+        h1
+            font-size: 40px
+
+        .nav-list
+            gap: 40px
+
+            .nav-list__item a
+                font-size: 18px
+
+    .hero-container
+        gap: 1.5rem
+
+        h2
+            font-size: 55px
+
+        p
+            font-size: 20px
+
+        button
+            padding: 12px 24px
+            min-height: 44px
+            min-width: 44px
+
+    #explore-restaurant
+        h3
+            font-size: 30px
+
+@media screen and (max-width: $breakpoint-large)
+    header
+        height: 70px
+
+        h1
+            font-size: 35px
+
+        .nav-list
+            gap: 30px
+
+            .nav-list__item a
+                font-size: 16px
+
+    .hero-container
+        gap: 1.4rem
+
+        h2
+            font-size: 50px
+
+            p
+                font-size: 18px
+
+            button
+                padding: 10px 20px
+                min-height: 44px
+                min-width: 44px
+
+            #explore-restaurant
+                h3
+                    font-size: 28px
+
+@media screen and (max-width: $breakpoint-medium)
+    #popupContainer
+        top: 0
+        left: 0
+        transform: translate(0, 0)
+        overflow: hidden
+
+@media screen and (max-width: $breakpoint-small)
+    header
+        h1
+            font-size: 30px
+            margin-left: 24px
+
+        .hamburger
+            display: block
+            background-color: $white-color
+            border: none
+            margin-left: auto
+            margin-right: 24px
+            width: 44px
+            height: 44px
+            cursor: pointer
+            display: flex
+            align-items: center
+            justify-content: center
+            border-radius: 5px
+
+        nav
+            z-index: 999
+            position: absolute
+            top: 70px
+            right: 100%
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1)
+            transition: left 1s ease
+            justify-content: flex-end
+            padding: 3rem 2rem
+
+        .open
+            right: 0
+            background: $primary-color
+            border-radius: 20px 0px 0px 20px
+
+            .nav-list
+                display: block
+                text-align: right
+
+            .nav-list__item
+                padding: 1rem 1rem
+                border-bottom: 1px solid $white-color
+                font-weight: bold
+                width: 100%
+
+    .hero-container
+        gap: 1rem
+
+        h2
+            font-size: 30px
+
+        p
+            font-size: 14px
+
+            button
+                padding: 8px 16px
+                min-height: 44px
+                min-width: 44px
